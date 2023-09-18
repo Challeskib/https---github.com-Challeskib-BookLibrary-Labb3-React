@@ -18,7 +18,7 @@ const DeleteBook = ({ bookId, onDelete }) => {
 
   return (
     <div>
-      <p>Are you sure you want to delete this book?</p>
+      <p>Are you sure you want to delete book with Id {bookId}?</p>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );
