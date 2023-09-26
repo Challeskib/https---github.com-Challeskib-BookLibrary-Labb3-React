@@ -10,18 +10,15 @@ const AddAuthor = ({ onAuthorAdded }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Assuming you have an API endpoint for adding authors
-    // Replace 'apiUrl' with the actual endpoint
-    const apiUrl = "https://localhost:7175/authors"; // Update with your API URL
+
+    const apiUrl = "https://localhost:7175/authors";
     const newAuthor = { name: authorName };
 
-    // Send a POST request to add the author
-    // You can use Axios or any other library you prefer
     axios
       .post(apiUrl, newAuthor)
       .then((response) => {
-        onAuthorAdded(response.data.result); // Notify the parent component about the new author
-        setAuthorName(""); // Clear the input field
+        onAuthorAdded(response.data.result);
+        setAuthorName("");
       })
       .catch((error) => {
         console.error("Error adding author:", error);
